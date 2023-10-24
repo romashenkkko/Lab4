@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-//lucreaza bine, fa raportul!!!
 
 void oppositeCase(char* str) {
     int ln = strlen(str);
@@ -30,17 +29,14 @@ int isRotation(char *str1, char *str2) {
     int len1 = strlen(str1);
     int len2 = strlen(str2);
 
-    // Check if the lengths are the same and not zero
     if (len1 != len2 || len1 == 0) {
         return 0;
     }
 
-    // Concatenate str1 with itself
     char combined[2 * len1 + 1];
     strcpy(combined, str1);
     strcat(combined, str1);
 
-    // Check if str2 is a substring of the concatenated string
     if (strstr(combined, str2) != NULL) {
         return 1;
     } else {
@@ -85,8 +81,6 @@ int main() {
 
     printf("Enter the third string: ");
     fgets(third_string, sizeof(third_string), stdin);
-
-    // Remove newline characters
     first_string[strcspn(first_string, "\n")] = '\0';
     second_string[strcspn(second_string, "\n")] = '\0';
     third_string[strcspn(third_string, "\n")] = '\0';
