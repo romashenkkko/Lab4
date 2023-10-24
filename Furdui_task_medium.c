@@ -57,16 +57,6 @@ int countPunctuationMarks(char str[]) {
     return count;
 }
 
-void reverseString(char str[]) {
-    int length = strlen(str);
-    char temp;
-    int j, i;
-    for (i = 0, j = length - 1; i < j; i++, j--) {
-        temp = str[i];
-        str[i] = str[j];
-        str[j] = temp;
-    }
-}
 
 int main() {
     char first_string[1000];
