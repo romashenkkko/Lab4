@@ -6,11 +6,11 @@ int main() {
     printf("Enter a sentence: ");
     fgets(user_sentence, sizeof(user_sentence), stdin);
 
-    // Make a copy of the input sentence to avoid modifying the original
+   
     char sentence_copy[1000];
     strcpy(sentence_copy, user_sentence);
 
-    char *separator = strtok(sentence_copy, " ,\n"); // Include '\n' to handle newline characters
+    char *separator = strtok(sentence_copy, " ,\n");
 
     char unique_words[1000][50];
     int word_counter[1000] = {0};
@@ -19,7 +19,6 @@ int main() {
     while (separator != NULL) {
         int is_unique = 1;
 
-        // Remove any unwanted characters like '\n' from the token
         int len = strlen(separator);
         if (separator[len - 1] == '\n') {
             separator[len - 1] = '\0';
